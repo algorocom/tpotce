@@ -223,7 +223,7 @@ services:
      - honeypots_local
     ports:
      - "21:21"
-     - "22:22"
+     - "2224:22"  # Changed from 22:22 to avoid conflict with system SSH
      - "23:23"
      - "25:25"
      - "53:53"

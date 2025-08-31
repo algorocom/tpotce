@@ -209,7 +209,7 @@ services:
     networks:
       - cowrie_local
     ports:
-      - "22:22"
+      - "2222:22"  # Changed from 22:22 to avoid conflict with system SSH
       - "23:23"
     image: ${TPOT_REPO}/cowrie:${TPOT_VERSION} 
     pull_policy: ${TPOT_PULL_POLICY}
@@ -332,7 +332,7 @@ services:
      - heralding_local
     ports:
     # - "21:21"
-    # - "22:22"
+     - "2224:22"  # SSH honeypot on 2224 to avoid conflict with system SSH
     # - "23:23"
     # - "25:25"
     # - "80:80"

@@ -75,7 +75,7 @@ services:
     networks:
      - endlessh_local
     ports:
-     - "22:2222"
+     - "2225:2222"  # Changed from 22:2222 to avoid conflict with system SSH
     image: ${TPOT_REPO}/endlessh:${TPOT_VERSION}
     pull_policy: ${TPOT_PULL_POLICY}
     read_only: true
@@ -129,7 +129,7 @@ services:
      - heralding_local
     ports:
      - "21:21"
-    # - "22:22"
+     - "2224:22"  # SSH honeypot on 2224 to avoid conflict with system SSH
      - "23:23"
      - "25:25"
     # - "80:80"

@@ -49,7 +49,7 @@ services:
     networks:
      - beelzebub_local
     ports:
-      - "22:22"
+      - "2223:22"  # Changed from 22:22 to avoid conflict with system SSH
     #  - "80:80"
     #  - "2222:2222"
     #  - "3306:3306"
