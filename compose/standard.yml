@@ -705,7 +705,7 @@ services:
      - nginx_local
     mem_limit: 1g
     ports:
-     - "127.0.0.1:64296:5601"
+     - "0.0.0.0:64296:5601"
     image: ${TPOT_REPO}/kibana:${TPOT_VERSION}
     pull_policy: ${TPOT_PULL_POLICY}
 
@@ -725,7 +725,7 @@ services:
      - TPOT_HIVE_IP=${TPOT_HIVE_IP}
      - LS_SSL_VERIFICATION=${LS_SSL_VERIFICATION:-full}
     ports:
-     - "127.0.0.1:64305:64305"
+     - "0.0.0.0:64305:64305"
     mem_limit: 2g
     image: ${TPOT_REPO}/logstash:${TPOT_VERSION}
     pull_policy: ${TPOT_PULL_POLICY}
@@ -761,7 +761,7 @@ services:
     stop_signal: SIGKILL
     tty: true
     ports:
-     - "127.0.0.1:64299:64299"
+     - "0.0.0.0:64299:64299"
     image: ${TPOT_REPO}/map:${TPOT_VERSION}
     pull_policy: ${TPOT_PULL_POLICY}
 
@@ -849,7 +849,7 @@ services:
     networks:
      - nginx_local
     ports:
-     - "127.0.0.1:64303:8080"
+     - "0.0.0.0:64303:8080"
     image: ${TPOT_REPO}/spiderfoot:${TPOT_VERSION}
     pull_policy: ${TPOT_PULL_POLICY}
     volumes:

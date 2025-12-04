@@ -613,8 +613,8 @@ To create your customized docker compose file:
 3. The script will guide you through the process of creating your own `docker-compose.yml`. As some honeypots and services occupy the same ports it will check if any port conflicts are present and notify regarding the conflicting services. You then can resolve them manually by adjusting `docker-compose-custom.yml` or re-run the script.
 4. Stop T-Pot with `systemctl stop tpot`.
 5. Copy the custom docker compose file: `cp docker-compose-custom.yml ~/tpotce` and `cd ~/tpotce`.
-6. Check if everything works by running `docker-compose -f docker-compose-custom.yml up`. In case of errors follow the [Docker Compose Specification](https://docs.docker.com/compose/compose-file/) for mitigation. Most likely it is just a port conflict you can adjust by editing the docker compose file. 
-6. If everything works just fine press `CTRL-C` to stop the containers and run `docker-compose -f docker-compose-custom.yml down -v`.
+6. Check if everything works by running `docker compose -f docker-compose-custom.yml up`. In case of errors follow the [Docker Compose Specification](https://docs.docker.com/compose/compose-file/) for mitigation. Most likely it is just a port conflict you can adjust by editing the docker compose file. 
+6. If everything works just fine press `CTRL-C` to stop the containers and run `docker compose -f docker-compose-custom.yml down -v`.
 7. Replace docker compose file with the new and successfully tested customized docker compose file `mv ~/tpotce/docker-compose-custom.yml ~/tpotce/docker-compose.yml`.
 8. Start T-Pot with `systemctl start tpot`.
 <br><br>
@@ -753,9 +753,9 @@ Generally T-Pot is offered ***as is*** without any commitment regarding support.
 systemctl stop tpot
 grc netstat -tulpen
 mi ~/tpotce/docker-compose.yml
-docker-compose -f ~/tpotce/docker-compose.yml up
+docker compose -f ~/tpotce/docker-compose.yml up
 CTRL+C
-docker-compose -f ~/tpotce/docker-compose.yml down -v
+docker compose -f ~/tpotce/docker-compose.yml down -v
 ```
 * Check individual container logs: `docker logs -f <container_name>`
 * Check `tpotinit` log: `cat ~/tpotce/data/tpotinit.log`
